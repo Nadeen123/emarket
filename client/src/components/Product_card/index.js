@@ -7,11 +7,11 @@ class ProductCard extends React.Component {
   state = {
     products: [],
     loading: true,
-    path1: '/shop'
+    path1:"/shop"
   }
 
   componentDidMount() {
-    this.setState({ path1: this.props.path })
+    this.setState({path1:this.props.path})
     if (this.props.match.params.id) {
       axios.get(`/shop/${this.props.match.params.id}`).then(({ data }) => {
         this.setState({ products: data, loading: false })
@@ -37,11 +37,7 @@ class ProductCard extends React.Component {
         {!loading ? (
           myProducts.length > 0 ? (
             myProducts.map(e => (
-              <Link
-                key={e.id}
-                to={'/product/' + e.id + this.state.path1}
-                key={e.id}
-              >
+              <Link to={'/product/' + e.id + this.state.path1} key = {e.id} >
                 <div className="cards">
                   <div className="product-card-back">
                     <div className="product-card">

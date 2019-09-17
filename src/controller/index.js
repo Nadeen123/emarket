@@ -10,11 +10,11 @@ const deleteItem = require('./deleteItem')
 const register = require('./register')
 const getCartProdusts = require('./getCartProdusts')
 const add_order = require('./add_order')
-
 router.get('/shop/:category_id', getAllcategoryProduct)
 router.get('/search/:searchInput', searchForAllProduct)
 router.get('/shop', getAllProduct)
 router.post('/shipping_info', add_order)
+
 router.get('/category', getCategories)
 router.get('/product/:id', getProduct.get)
 router.post('/add-to-cart', addToCart.post)
