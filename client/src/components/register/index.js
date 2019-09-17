@@ -17,23 +17,18 @@ class Register extends Component {
     this.setState({ [name]: value })
   }
 
-  registerButton = (event) => {
+  registerButton = event => {
+    const { username, email, password, phone, address } = this.state
     event.preventDefault()
     axios
-      .post('/register', {
-        username: this.state.username,
-        email: this.state.email,
-        password: this.state.password,
-        phone: this.state.phone,
-        address: this.state.address
-      })
+      .post('/register', { username, email, password, phone, address })
       .then(response => {
         swal({
           title: 'registerd',
           icon: 'success',
           button: 'go to Home'
         }).then(res => {
-        window.location.href = `/`
+          window.location.href = `/`
         })
       })
       .catch(error => {
@@ -42,8 +37,8 @@ class Register extends Component {
           icon: 'error',
           button: 'try now'
         }).then(res => {
-        window.location.href = `/register`
-      })
+          window.location.href = `/register`
+        })
       })
   }
   render() {
