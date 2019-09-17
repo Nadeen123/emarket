@@ -1,3 +1,4 @@
+const { serverError } = require('./middleware/handleError')
 const path = require('path')
 const express = require('express')
 const app = express()
@@ -7,9 +8,9 @@ app.use(express.json())
 app.use(express.urlencoded())
 
 app.use(router)
+app.use(serverError)
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
 })
-
 module.exports = app
