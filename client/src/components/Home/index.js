@@ -3,7 +3,7 @@ import NavBar from '../Navbar'
 import './style.css'
 import Category from '../Category'
 
-const Home = () => {
+const Home = props => {
   return (
     <div className="home">
       <NavBar />
@@ -12,7 +12,7 @@ const Home = () => {
         src="https://5.top4top.net/p_1341td5iv1.jpg"
         alt="main_image"
       />
-      <Category />
+      <Category {...props} />
     </div>
   )
 }
