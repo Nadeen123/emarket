@@ -7,10 +7,17 @@ class Category extends React.Component {
     result: []
   }
   componentDidMount() {
-    axios.get('/category').then(result => {
-      const resultArray = result.data.map(e => e)
-      this.setState({ result: resultArray })
-    })
+    const { history } = this.props
+    axios
+      .get('/category')
+      .then(result => {
+        const resultArray = result.data.map(e => e)
+        this.setState({ result: resultArray })
+      })
+      .catch(err => {
+        console.log(err, 'jjjj')
+        history.push('/500')
+      })
   }
 
   render() {
