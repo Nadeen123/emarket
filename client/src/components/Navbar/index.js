@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './style.css'
 import { Link } from 'react-router-dom'
 
-class NavBar extends React.Component {
+class NavBar extends Component {
   state = { toggleMenu: false }
 
   onClick1 = () => {

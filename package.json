@@ -37,10 +37,6 @@
     "build": "cd client && npm run build",
     "eject": "react-scripts eject",
     "client-install": "cd client && npm install"
-
-
-
-
   },
   "repository": {
     "type": "git",

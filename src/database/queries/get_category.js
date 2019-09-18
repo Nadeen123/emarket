@@ -2,7 +2,7 @@ const dbConnection = require('../db_connection')
 
 const getCategory = (err, req, res, next) =>
   dbConnection
-    .query('SELECT * FROM categor')
+    .query('SELECT * FROM category')
     .then(res => res.rows)
     .catch(() => {
       console.log('hereeeeeeeee11111')

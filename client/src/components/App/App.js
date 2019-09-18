@@ -35,7 +35,7 @@ class App extends Component {
             <Route exact path="/about_us" component={about_us} />
             <Route exact path="/500" component={serverError} />
 
-            <Route path="" component={() => <h1>Page Not Found</h1>} />
+            {/* <Route path="" component={() => <h1>Page Not Found</h1>} /> */}
           </div>
         </Switch>
       </Router>

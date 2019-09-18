@@ -31,7 +31,7 @@ class Category extends React.Component {
           />
         ) : (
           this.state.result.map(e => (
-            <Link to={'/shop/' + e.id}>
+            <Link to={'/shop/' + e.id} key={e.id}>
               <div onClick={this.props.onClick}>
                 <img
                   className="grid-item"
