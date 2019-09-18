@@ -1,43 +1,44 @@
-import React, { Component } from "react";
-import "./style.css";
-import swal from "sweetalert";
-import NavBar from "../Navbar";
-import axios from "axios";
+import React, { Component } from 'react'
+import './style.css'
+import swal from 'sweetalert'
+import NavBar from '../Navbar'
+import axios from 'axios'
 
 class shippingInfo extends Component {
   state = {
-    username: "",
-    phone: "",
-    Address: "",
-    Extra_Note: ""
-  };
+    username: '',
+    phone: '',
+    Address: '',
+    Extra_Note: ''
+  }
 
+  // put the entered value from the user to it's state.
   changeInput = ({ target: { value, name } }) => {
-    this.setState({ [name]: value });
-  };
+    this.setState({ [name]: value })
+  }
 
   handleSubmit = event => {
-    event.preventDefault();
-    const { username, phone, Address, Extra_Note } = this.state;
+    event.preventDefault()
+    const { username, phone, Address, Extra_Note } = this.state
 
     axios
-      .post("/shipping_info", { username, phone, Address, Extra_Note })
+      .post('/shipping_info', { username, phone, Address, Extra_Note })
       .then(res => {
         if (res.data) {
           swal({
             title:
-              "Your Order is processed Contact us on phone No : 0598121490",
-            icon: "success",
-            button: "Home!"
+              'Your Order is processed Contact us on phone No : 0598121490',
+            icon: 'success',
+            button: 'Home!'
           }).then(function() {
-            window.location.href = "/";
-          });
+            window.location.href = '/'
+          })
         }
-      });
-  };
+      })
+  }
 
   render() {
-    const { username, phone, Address, Extra_Note } = this.state;
+    const { username, phone, Address, Extra_Note } = this.state
     return (
       <div>
         <NavBar />
@@ -86,7 +87,7 @@ class shippingInfo extends Component {
           </button>
         </form>
       </div>
-    );
+    )
   }
 }
-export default shippingInfo;
+export default shippingInfo

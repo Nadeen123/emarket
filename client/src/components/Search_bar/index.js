@@ -6,6 +6,8 @@ class SearchBar extends Component {
   getSearchedProduct = () => {
     const { searchInput } = this.props
     const { id } = this.props.match.params
+
+    // return product data from database where name equal user input value
     if (searchInput) {
       axios.get(`/search/${searchInput + 'id' + id}`).then(({ data }) => {
         this.props.serchArray(data)

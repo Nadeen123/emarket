@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 class NavBar extends Component {
   state = { toggleMenu: false }
 
+  // function used to change the toggleMenue variable value to to show or hide it.
   onClick1 = () => {
     const { toggleMenu } = this.state
-
     this.setState({ toggleMenu: !toggleMenu })
   }
 
@@ -39,13 +39,14 @@ class NavBar extends Component {
             />
           </Link>
 
+          {/* when click on the menue image change the style and toggleMenue
+          variable value */}
           <img
             className={!toggleMenu ? 'menu' : 'clickedMenu'}
             src="https://4.top4top.net/p_1339ilo061.png"
             alt="menu"
             onClick={this.onClick1}
           />
-
           <div className={!toggleMenu ? 'hiddenMenu' : 'showMenu'}>
             <Link to="/about_us">
               <h2 className="aboutUs">About us</h2>

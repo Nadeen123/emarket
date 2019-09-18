@@ -13,11 +13,12 @@ class Register extends Component {
     address: ''
   }
 
+  // put the entered value from the user to it's state.
   changeInput = ({ target: { value, name } }) => {
     this.setState({ [name]: value })
   }
 
-  registerButton = (event) => {
+  registerButton = event => {
     event.preventDefault()
     axios
       .post('/register', {
@@ -33,7 +34,7 @@ class Register extends Component {
           icon: 'success',
           button: 'go to Home'
         }).then(res => {
-        window.location.href = `/`
+          window.location.href = `/`
         })
       })
       .catch(error => {
@@ -42,8 +43,8 @@ class Register extends Component {
           icon: 'error',
           button: 'try now'
         }).then(res => {
-        window.location.href = `/register`
-      })
+          window.location.href = `/register`
+        })
       })
   }
   render() {
